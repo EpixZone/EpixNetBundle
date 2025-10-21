@@ -15,7 +15,7 @@ a = Analysis(
         'zipimport', 'marshal', 'nt', 'winreg', 'encodings', 'codecs', 'ctypes', 'ctypes.wintypes', 'abc', 'os', 'stat', 'ntpath', 'genericpath', 'os.path', 'time', 'logging', 'traceback', 'collections', 'operator', 'keyword', 'heapq', 'itertools', 'reprlib', 'linecache', 'functools', 'tokenize', 're', 'enum', 'types', 'sre_compile', 'sre_parse', 'sre_constants', 'copyreg', 'token', 'warnings', 'weakref', 'collections.abc', 'string', 'threading', 'atexit', 'socket', 'selectors', 'math', 'select', 'errno', 'importlib', 'textwrap', 'signal', 'tracemalloc', 'fnmatch', 'posixpath', 'pickle', 'struct', 'gc', 'inspect', 'dis', 'opcode', 'importlib.machinery', 'zipfile', 'importlib.util', 'importlib.abc', 'contextlib', 'shutil', 'zlib', 'bz2', 'lzma', 'binascii', 'pkgutil', 'platform', 'subprocess', 'msvcrt', 'plistlib', 'datetime', 'xml', 'xml.parsers', 'xml.parsers.expat', 'pyexpat', 'email', 'email.parser', 'email.feedparser', 'email.errors', 'email._policybase', 'email.header', 'email.quoprimime', 'email.base64mime', 'base64', 'email.charset', 'email.encoders', 'quopri', 'email.utils', 'random', 'hashlib', 'bisect', 'urllib', 'urllib.parse', 'email._parseaddr', 'calendar', 'locale', 'tempfile', 'copy', 'pprint', 'email.message', 'uu', 'email._encoded_words', 'email.iterators', 'ssl', 'queue', 'argparse', 'gettext', 'configparser', 'logging.handlers', 'encodings.cp1250', 'urllib.request', 'http', 'http.client', 'urllib.error', 'urllib.response', 'nturl2path', 'xml.dom', 'json', 'array', 'sqlite3', 'html', 'html.entities', 'hmac', 'encodings.idna', 'stringprep', 'unicodedata', 'pathlib', 'difflib', 'cgi', 'mimetypes', 'uuid', 'concurrent'
     ],
     runtime_hooks=["script/pyinstaller_lib_hook.py"],
-    excludes=['lib2to3', 'sys', 'zeronet', 'FixTk', 'tcl', 'tk', '_tkinter', 'tkinter', 'Tkinter', 'gevent'],
+    excludes=['lib2to3', 'sys', 'epixnet', 'FixTk', 'tcl', 'tk', '_tkinter', 'tkinter', 'Tkinter', 'gevent'],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
     cipher=block_cipher
@@ -32,11 +32,11 @@ exe_gui = EXE(
     a.scripts,
     exclude_binaries=True,
     append_pkg=False,
-    name='ZeroNet',
+    name='EpixNet',
     debug=False,
     strip=False,
     upx=True,
-    icon="script/zeronet.ico",
+    icon="script/epixnet.ico",
     console=False
 )
 
@@ -45,11 +45,11 @@ exe_cli = EXE(
     a.scripts,
     exclude_binaries=True,
     append_pkg=False,
-    name='ZeroNet-cli',
+    name='EpixNet-cli',
     debug=False,
     strip=False,
     upx=True,
-    icon="script/zeronet.ico",
+    icon="script/epixnet.ico",
     console=True
 )
 
@@ -61,5 +61,5 @@ coll = COLLECT(
     a.datas,
     strip=False,
     upx=True,
-    name='ZeroNet'
+    name='EpixNet'
 )

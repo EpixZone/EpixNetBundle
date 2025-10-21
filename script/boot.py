@@ -10,7 +10,7 @@ def getWorkDir():
 
         if work_dir.startswith("/Application") or work_dir.startswith("/private") or work_dir.startswith(os.path.expanduser("~/Library")):
             # In Applcation Support
-            work_dir = os.path.expanduser("~/Library/Application Support/ZeroNet")
+            work_dir = os.path.expanduser("~/Library/Application Support/EpixNet")
             if not os.path.isdir(work_dir):
                 os.mkdir(work_dir)
         elif ".app" in work_dir:
@@ -35,7 +35,7 @@ def getRev(file_path):
         return -1
 
 
-# ZeroNet source paths
+# EpixNet source paths
 def addSourcePaths(work_dir):
     if sys.platform == "darwin":
         source_packed_dir = os.path.normpath(os.path.abspath(os.path.dirname(sys.executable)) + "/../Resources/core")
@@ -47,7 +47,7 @@ def addSourcePaths(work_dir):
         sys.path.append(source_packed_dir)  # Packed-in source
         sys.source_update_dir = source_update_dir  # Updated source code should be put here
     else:
-        sys.path.insert(0, os.path.join(work_dir, "core"))  # ZeroNet source code
+        sys.path.insert(0, os.path.join(work_dir, "core"))  # EpixNet source code
 
 
 def setup():
@@ -68,7 +68,7 @@ def setup():
 
     # Replace boot.py with the real executable
     if sys.argv[0].endswith("Resources/boot.py"):
-        sys.argv[0] = sys.argv[0].replace("Resources/boot.py", "MacOS/ZeroNet")
+        sys.argv[0] = sys.argv[0].replace("Resources/boot.py", "MacOS/EpixNet")
         sys.executable = sys.argv[0]
 
     addSourcePaths(work_dir)
@@ -76,7 +76,7 @@ def setup():
 setup()
 
 
-import zeronet
+import epixnet
 
 
 gui_root = None
@@ -148,8 +148,8 @@ def main(mode="main", open_browser=True):
             sys_exit(*args)
         sys.exit = threadedExit
 
-    # Start ZeroNet itself
-    zeronet.start()
+    # Start EpixNet itself
+    epixnet.start()
 
     # Stop gui
     if gui_root:
