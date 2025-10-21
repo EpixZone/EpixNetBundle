@@ -119,7 +119,7 @@ find runtime/lib/$py_ver/* ! -name site.py ! -name os.py ! -name sitecustomize.p
 
 
 echo -n "* Testing https request..."
-runtime/bin/python3 -c 'assert len(__import__("urllib.request").request.urlopen("https://epixnet.io").read()) > 0; print("ok")'
+runtime/bin/python3 -c 'assert len(__import__("urllib.request").request.urlopen("https://epix.zone/").read()) > 0; print("ok")'
 
 
 echo -n "* Runtime size: "
@@ -132,7 +132,7 @@ mkdir -v build
 
 cd build
 
-git clone https://github.com/HelloEpixNet/EpixNet.git core
+git clone https://github.com/EpixZone/EpixNet.git core
 mv ../temp/runtime runtime
 
 rm -rf core/.git
